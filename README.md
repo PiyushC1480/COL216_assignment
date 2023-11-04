@@ -39,4 +39,4 @@ Following policy is used for the cache design
 1) If L1 hits then, increase the counter if read_hit by one and change the age(how recently the value is used) to the new value.
 2) If it is a L1 miss , then we raise a L1 write request. If the block is present in L2 then it is loaded in L1 and given the most recent value of age in L2 and L1. If the loading block replaces a block in L1 then we raise a L2 write request to write this replaced block in L2. and load the required word in L1.
 3) IfablockisreplacedfromL2,thenifacopyofitispresentinL1,itis invalidated by turning its valid bit on.
-4) IfwegetaL2miss,thenweloadthedatainL2andL1tosatisfythe inclusion property.
+4) If we get a L2 miss,then we load the data in L2 and L1 to satisfy the inclusion property.
